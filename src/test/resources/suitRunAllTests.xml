@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite Run All Tests">
+    <test name="Test 1">
+        <classes>
+            <class name="Calculator.Tests.CalculatorSumTest"/>
+            <class name="Calculator.Tests.CalculatorSubTest"/>
+            <class name="Calculator.Tests.CalculatorDivTest"/>
+            <class name="Calculator.Tests.CalculatorMultTest"/>
+        </classes>
+    </test>
+</suite>
