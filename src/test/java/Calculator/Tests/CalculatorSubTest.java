@@ -5,8 +5,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CalculatorSubTest extends AbstractBaseTest {
+
     @Test
-    public void SimpleSubTest(){
+    public void simpleSubTest(){
         double actual = calculator.sub(2.0,2.0);
         Assert.assertEquals(actual,0.0);
     }
@@ -19,7 +20,6 @@ public class CalculatorSubTest extends AbstractBaseTest {
         };
     }
 
-
     @DataProvider(name = "Negative Sub Test Data")
     public Object [][] subNegativeTestDataProvider () {
         return new Object[][]{
@@ -29,14 +29,13 @@ public class CalculatorSubTest extends AbstractBaseTest {
     }
 
     @Test(dataProvider = "subPositiveTestDataProvider")
-    public void PositiveDataProviderSubTest(double a,double b, double expected){
+    public void positiveDataProviderSubTest(double a,double b, double expected){
         double actual = calculator.sub(a, b);
         Assert.assertEquals(actual, expected);
     }
 
-
     @Test(dataProvider = "Negative Sub Test Data")
-    public void NegativeDataProviderSubTest(double a,double b, double expected){
+    public void negativeDataProviderSubTest(double a,double b, double expected){
         double actual = calculator.sub(a, b);
         Assert.assertNotEquals(actual, expected);
     }

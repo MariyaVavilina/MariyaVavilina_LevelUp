@@ -5,8 +5,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CalculatorDivTest extends AbstractBaseTest {
+
     @Test
-    public void SimpleDivTest(){
+    public void simpleDivTest(){
         double actual = calculator.div(2.0,2.0);
         Assert.assertEquals(actual,1.0);
     }
@@ -19,7 +20,6 @@ public class CalculatorDivTest extends AbstractBaseTest {
         };
     }
 
-
     @DataProvider(name = "Negative Div Test Data")
     public Object [][] divNegativeTestDataProvider () {
         return new Object[][]{
@@ -29,14 +29,13 @@ public class CalculatorDivTest extends AbstractBaseTest {
     }
 
     @Test(dataProvider = "divPositiveTestDataProvider")
-    public void PositiveDataProviderDivTest(double a,double b, double expected){
+    public void positiveDataProviderDivTest(double a,double b, double expected){
         double actual = calculator.div(a, b);
         Assert.assertEquals(actual, expected);
     }
 
-
     @Test(dataProvider = "Negative Div Test Data")
-    public void NegativeDataProviderDivTest(double a,double b, double expected){
+    public void negativeDataProviderDivTest(double a,double b, double expected){
         double actual = calculator.div(a, b);
         Assert.assertNotEquals(actual, expected);
     }

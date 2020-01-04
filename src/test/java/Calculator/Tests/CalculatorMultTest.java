@@ -5,8 +5,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CalculatorMultTest extends  AbstractBaseTest {
+
     @Test
-    public void SimpleMultTest(){
+    public void simpleMultTest(){
         double actual = calculator.mult(2.0,2.0);
         Assert.assertEquals(actual,4.0);
     }
@@ -19,7 +20,6 @@ public class CalculatorMultTest extends  AbstractBaseTest {
         };
     }
 
-
     @DataProvider(name = "Negative Mult Test Data")
     public Object [][] multNegativeTestDataProvider () {
         return new Object[][]{
@@ -29,14 +29,13 @@ public class CalculatorMultTest extends  AbstractBaseTest {
     }
 
     @Test(dataProvider = "multPositiveTestDataProvider")
-    public void PositiveDataProviderMultTest(double a,double b, double expected){
+    public void positiveDataProviderMultTest(double a,double b, double expected){
         double actual = calculator.mult(a, b);
         Assert.assertEquals(actual, expected);
     }
 
-
     @Test(dataProvider = "Negative Mult Test Data")
-    public void NegativeDataProviderMultTest(double a,double b, double expected){
+    public void negativeDataProviderMultTest(double a,double b, double expected){
         double actual = calculator.mult(a, b);
         Assert.assertNotEquals(actual, expected);
     }
