@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite Run Mul Div">
+    <test name="Test 3">
+        <classes>
+            <class name="Calculator.Tests.CalculatorMultTest"/>
+            <class name="Calculator.Tests.CalculatorDivTest"/>
+        </classes>
+    </test>
+</suite>
