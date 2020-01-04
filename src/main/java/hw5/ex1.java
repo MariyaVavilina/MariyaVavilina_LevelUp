@@ -11,8 +11,8 @@ public class ex1 extends AbctractClass{
 
     @Test
     public void openSitePageTest(){
-        //шаг 1 "Открыть тестовый сайт"
-        driver.get("http://users.bugred.ru/");
+        //шаг 1 "Открыть тестовый сайт", добавлено в @BeforeMethod
+        //driver.get("http://users.bugred.ru/");
 
         //шаг 2 "Проверить название сайта"
         assertThat(driver.getTitle(), equalTo("Users"));
@@ -27,10 +27,7 @@ public class ex1 extends AbctractClass{
         assertThat(driver.findElement(By.id("fat-menu")).getText(), equalTo("mariya@"));
         driver.findElement(By.id("fat-menu")).click();
 
-        //шаг 5 "Выполнить выход их системы"
-        driver.findElement(By.xpath("//a[text()='Выход']")).click();
-
-        //шаг 6 "Закрыть браузер"
-        driver.close();
+        //шаг 5 "Выполнить выход их системы", вынесено в @AfterMethod
+        //driver.findElement(By.xpath("//a[text()='Выход']")).click();
     }
 }

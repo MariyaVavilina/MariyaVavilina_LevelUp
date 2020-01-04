@@ -1,6 +1,7 @@
 package hw5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -23,10 +24,12 @@ public class AbctractClass {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+        driver.get("http://users.bugred.ru/");
     }
 
     @AfterMethod
     public void tearDownBrowser() {
+        driver.findElement(By.xpath("//a[text()='Выход']")).click();
         driver.quit();
     }
 }

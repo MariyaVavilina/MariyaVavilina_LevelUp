@@ -10,8 +10,8 @@ public class ex3 extends AbctractClass{
 
     @Test
     public void openSitePageTest(){
-        //шаг 1 "Открыть тестовый сайт"
-        driver.get("http://users.bugred.ru/");
+        //шаг 1 "Открыть тестовый сайт", добавлено в @BeforeMethod
+        //driver.get("http://users.bugred.ru/");
         //шаг 2  "Войти на сайт"
         driver.findElement(By.xpath("//a//span[text()='Войти']")).click();
         driver.findElement(By.name("login")).sendKeys("mariyavavilina@mail.ru");
@@ -20,7 +20,5 @@ public class ex3 extends AbctractClass{
         //шаг 3 "Нажать на кнопку «Компании»"
         driver.findElement(By.xpath("//a//span[text()='Компании']")).click();
         //при нажатии на кнопоку «Добавить компанию»" открывается пустое окно, дальнейшая работа невозможна
-        //шаг 8 "Закрыть браузер"
-        driver.close();
     }
 }
